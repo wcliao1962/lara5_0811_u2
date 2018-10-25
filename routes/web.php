@@ -22,9 +22,13 @@ Route::get('say/{name?}', ['as'=>'hello.index', function ($name='Everybody') {
     return 'Hello, '.$name;
 }]);
 
+Route::get('dashboard', function () {
+    return 'dashboard';
+});
+
 Route::group(['prefix'=>'admin'], function () {
     Route::get('dashboard', function () {
-        return 'dashboard';
+        return 'admin dashboard';
     });
 
 });
